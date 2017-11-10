@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace WinServicePlus1
 {
@@ -19,6 +20,28 @@ namespace WinServicePlus1
             });
 
             Bind<Service.WinService>().ToSelf();
+
+            FileSystemWatcher watcher = new FileSystemWatcher();
+            try
+            {
+                watcher.Path = @"C:\Temp";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("\nOcorreu um erro: " + e.Message);
+                return;
+            }
+
+            watcher.NotifyFilter = NotifyFilters.LastWrite
+                | NotifyFilters.FileName
+                | NotifyFilters.DirectoryName;
+                //NotifyFilters.LastAccess
+                //| NotifyFilters.Attributes
+                //| NotifyFilters.CreationTime
+                //| NotifyFilters.Security
+                //| NotifyFilters.Size
+                // Somente vigiará os arquivos de texto
+                watcher.Filter = "*.txt";
 
         }
     }

@@ -22,9 +22,9 @@ namespace WinServicePlus1
 
             // Specify the base name, display name and description for the service, as it is registered in the services control manager.
             // This information is visible through the Windows Service Monitor
-            const string serviceName = "WinServicePlus1";
-            const string displayName = "WinServicePlus1 Service";
-            const string description = "A .NET Windows Service.";
+            const string serviceName = "Convert_Intregador(BGD)";
+            const string displayName = "Convert Intregador(BGD)";
+            const string description = "conversor de arquivos da Bridgestone  ";
 
             HostFactory.Run(x =>
             {
