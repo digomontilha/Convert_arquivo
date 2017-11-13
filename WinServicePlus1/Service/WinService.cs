@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Topshelf;
 
-namespace WinServicePlus1.Service
+namespace converter.Service
 {
     class WinService
     {
